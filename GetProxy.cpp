@@ -1056,9 +1056,8 @@ Return Value:
 	pwszProxyBypass = ProxyConfig.lpszProxyBypass;
 	ProxyConfig.lpszProxyBypass = NULL;
 
-	wprintf(L"Falling back to static proxy settings...\n");
-	wprintf(L"Static proxy: %s\n", pwszProxy);
-	wprintf(L"Proxy bypass: %s\n", pwszProxyBypass);
+	wprintf(L"Static proxy settings: %s\n", pwszProxy);
+	wprintf(L"Static proxy bypass settings: %s\n", pwszProxyBypass);
 
 commit:
 
