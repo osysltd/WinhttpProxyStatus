@@ -1094,7 +1094,7 @@ commit:
 
 	if (m_wpiProxyInfo.lpszProxyBypass)
 	{
-		wprintf(L"Proxy bypass: %s\n", m_wpiProxyInfo.lpszProxyBypass);
+		wprintf(L"Proxy bypass resolution: %s\n", m_wpiProxyInfo.lpszProxyBypass);
 	}
 
 	m_fInit = TRUE;

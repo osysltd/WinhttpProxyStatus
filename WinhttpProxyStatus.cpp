@@ -414,7 +414,7 @@ wmain(
     }
 
     pwszUrl = argv[1];
-	wprintf(L"Using default url: %s\n\n", argv[1]);
+	wprintf(L"Using url: %s\n\n", argv[1]);
 
 
 	// Init WinSock
