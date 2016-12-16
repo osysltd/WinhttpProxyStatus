@@ -1083,6 +1083,11 @@ commit:
 		wprintf(L"Proxy resolution: %s\n", m_wpiProxyInfo.lpszProxy);
 	}
 
+	else if (!m_fExtendedAPI)
+	{
+		wprintf(L"Proxy resolution: DIRECT\n");
+	}
+
 	// Proxy bypass
 	m_wpiProxyInfo.lpszProxyBypass = pwszProxyBypass;
 	pwszProxyBypass = NULL;
