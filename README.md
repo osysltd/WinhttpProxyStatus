@@ -52,4 +52,3 @@ To run the sample:
 1.  Navigate to the directory that contains the new executable, using the command prompt.
 
 2.  Type **WinhttpProxyStatus.exe \<url\>** at the command prompt.
-
