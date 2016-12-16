@@ -391,6 +391,15 @@ Return Value:
 		goto quit;
 	}
 
+	if (m_wprProxyResult.pEntries[m_dwProxyCursor].fProxy)
+	{
+		wprintf(L"Extended API proxy resolution entry: %s:%d\n", m_wprProxyResult.pEntries[m_dwProxyCursor].pwszProxy, m_wprProxyResult.pEntries[m_dwProxyCursor].ProxyPort);
+	}
+	else
+	{
+		wprintf(L"Extended API proxy resolution entry: DIRECT\n");
+	}
+
 	m_dwProxyCursor++;
 
 quit:
@@ -845,6 +854,9 @@ Return Value:
 		//
 
 		dwError = ERROR_SUCCESS;
+
+		wprintf(L"Authentication required: autologon challenged\n");
+
 		waoOptions.fAutoLogonIfChallenged = TRUE;
 		if (!WinHttpGetProxyForUrl(hSession,
 			pwszUrl,
@@ -1044,6 +1056,7 @@ Return Value:
 	pwszProxyBypass = ProxyConfig.lpszProxyBypass;
 	ProxyConfig.lpszProxyBypass = NULL;
 
+	wprintf(L"Falling back to static proxy settings...\n");
 	wprintf(L"Static proxy: %s\n", pwszProxy);
 	wprintf(L"Proxy bypass: %s\n", pwszProxyBypass);
 
@@ -1062,23 +1075,25 @@ commit:
 
 	// Proxy resolution
 	m_wpiProxyInfo.lpszProxy = pwszProxy;
-	if (pwszProxy) 
-	{
-		wprintf(L"\nProxy resolution: %s\n", pwszProxy);
-	}
-	else {
-		wprintf(L"\nProxy resolution: DIRECT\n");
-	}
 	pwszProxy = NULL;
+
+	if (m_wpiProxyInfo.lpszProxy)
+	{
+		// For Windows 10 always null, uses extended API
+		wprintf(L"Proxy resolution: %s\n", m_wpiProxyInfo.lpszProxy);
+	}
 
 	// Proxy bypass
 	m_wpiProxyInfo.lpszProxyBypass = pwszProxyBypass;
-	if (pwszProxyBypass) {
-		wprintf(L"Proxy bypass: %s\n", pwszProxyBypass);
-	}
 	pwszProxyBypass = NULL;
 
+	if (m_wpiProxyInfo.lpszProxyBypass)
+	{
+		wprintf(L"Proxy bypass: %s\n", m_wpiProxyInfo.lpszProxyBypass);
+	}
+
 	m_fInit = TRUE;
+
 
 quit:
 
