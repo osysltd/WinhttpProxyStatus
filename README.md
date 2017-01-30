@@ -1,5 +1,4 @@
 # WinHTTP Proxy Status
-====================
 This sample demonstrates how to use the WinHTTP API core functionality for querying the proxy settings to determine the proxy for a particular URL.
 
 # The APIs demonstrated in this sample are:
@@ -11,11 +10,9 @@ Both [**WinHttpGetProxyForUrl**](http://msdn.microsoft.com/en-us/library/windows
 This sample can be extended as needed for your application, using the proxy code from this sample as a starting point, to add additional functionality. For example, an application could add a per-URL proxy cache, awareness for network changes, a filter for bad proxies, or other desired functionality.
 
 # Related technologies
---------------------
 [Windows HTTP Services (WinHTTP)](http://msdn.microsoft.com/en-us/library/windows/desktop/aa384273)
 
 # Related topics
---------------
 [WinHttpOpenRequest](http://msdn.microsoft.com/en-us/library/windows/desktop/aa384099)
 
 [WinHttpCreateProxyResolver](http://msdn.microsoft.com/en-us/library/windows/desktop/hh405355)
@@ -32,7 +29,6 @@ This sample can be extended as needed for your application, using the proxy code
 
 
 # Build the sample
-----------------
 To build the sample using Visual Studio:
 1.  Open Windows Explorer and navigate to the **\\cpp** directory.
 2.  Double-click the icon for the **WinhttpProxyStatus.sln** file to open the file in Visual Studio.
@@ -40,7 +36,6 @@ To build the sample using Visual Studio:
 
 
 # Run the sample
---------------
 To run the sample:
 1.  Navigate to the directory that contains the new executable, using the command prompt.
 2.  Type **WinhttpProxyStatus.exe \<url\>** at the command prompt.
