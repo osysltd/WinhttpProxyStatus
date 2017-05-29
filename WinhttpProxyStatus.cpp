@@ -421,15 +421,23 @@ wmain(
 	WSADATA wsa_Data;
 	int wsa_ReturnCode = WSAStartup(0x101, &wsa_Data);
 
-	// Get the local hostname
+	// Get the local hostname and IP address
 	char szHostName[255];
 	gethostname(szHostName, 255);
 	struct hostent *host_entry;
 	host_entry = gethostbyname(szHostName);
 	char * szLocalIP;
 	szLocalIP = inet_ntoa(*(struct in_addr *)*host_entry->h_addr_list);
-	
-	wprintf(L"PC: %S IP: %S\n", szHostName, szLocalIP);
+
+	// Get username
+	#define INFO_BUFFER_SIZE 32767
+	TCHAR  infoBuf[INFO_BUFFER_SIZE];
+	DWORD  bufCharCount = INFO_BUFFER_SIZE;
+	GetUserName(infoBuf, &bufCharCount);
+	//char * szUserName;
+	//szUserName = getenv("USERNAME");
+
+	wprintf(L"USER: %s PC: %S IP: %S\n", infoBuf, szHostName, szLocalIP);
 	
 	WSACleanup();
 	
