@@ -408,13 +408,13 @@ wmain(
 
     if (argc != 2)
     {
-        wprintf(L"Usage: %s <url>\n", argv[0]);
+        wprintf(L"Usage: %s <URL>\n\n", argv[0]);
 		argv[1] = L"https://support.microsoft.com/en-us";
 		//goto quit;
     }
 
     pwszUrl = argv[1];
-	wprintf(L"Using url: %s\n\n", argv[1]);
+	wprintf(L"Trying URL: %s\n\n", argv[1]);
 
 
 	// Init WinSock
