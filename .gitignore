@@ -2,3 +2,5 @@ Release
 Debug
 *.opendb
 *.db
+/.vs
+/UpgradeLog.htm

@@ -15,6 +15,7 @@
 //        3) Bad Proxy Filter.
 //
 
+#pragma comment(lib , "ws2_32.lib")
 #include <windows.h>
 #include <stdio.h>
 #include <string> 
